@@ -18,6 +18,12 @@ const Home = () => {
         }
     }
 
+    const handleCheckBox = (e) => {
+        const isChecked = e.target.checked
+        console.log(isChecked);
+    }
+
+
     return (
         <div>
             <div className="input-group mb-3">
@@ -29,7 +35,7 @@ const Home = () => {
                 </div>
             </div>
             {
-                list.map(each => <ToDoList note={each} ></ToDoList>)
+                list.map(each => <ToDoList note={each} handleCheckBox={handleCheckBox} ></ToDoList>)
             }
         </div>
     );

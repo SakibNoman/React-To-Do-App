@@ -1,10 +1,11 @@
 import React from 'react';
 
 const ToDoList = (props) => {
+
     return (
         <div>
             <div className="input-group-text mb-2  justify-content-between ">
-                <input className="mr-3" type="checkbox" aria-label="Checkbox for following text input" />
+                <input onChange={props.handleCheckBox} className="mr-3" type="checkbox" aria-label="Checkbox for following text input" />
                 <div class="input-group-prepend text-left">
                     {props.note}
                 </div>
