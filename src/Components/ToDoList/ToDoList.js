@@ -1,11 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const ToDoList = (props) => {
+    const [isChecked, setIsChecked] = useState(false)
+    const handleCheckBox = (e) => {
+        setIsChecked(e.target.checked)
+    }
+    let style = {}
+    if (isChecked) {
+        style = {
+            textDecoration: "line-through",
+            backgroundColor: "grey"
+        }
+    }
 
     return (
         <div>
-            <div className="input-group-text mb-2  justify-content-between ">
-                <input onChange={props.handleCheckBox} className="mr-3" type="checkbox" aria-label="Checkbox for following text input" />
+            <div style={style} className="input-group-text mb-2  justify-content-between ">
+                <input onChange={handleCheckBox} className="mr-3" type="checkbox" aria-label="Checkbox for following text input" />
                 <div class="input-group-prepend text-left">
                     {props.note}
                 </div>

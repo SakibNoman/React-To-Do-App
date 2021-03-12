@@ -13,14 +13,9 @@ const Home = () => {
     let newItem = '';
     const addNewItem = () => {
         if (inputValue.length > 0) {
-            newItem = [inputValue, ...list]
+            newItem = [...list, inputValue]
             setList(newItem);
         }
-    }
-
-    const handleCheckBox = (e) => {
-        const isChecked = e.target.checked
-        console.log(isChecked);
     }
 
 
@@ -35,7 +30,7 @@ const Home = () => {
                 </div>
             </div>
             {
-                list.map(each => <ToDoList note={each} handleCheckBox={handleCheckBox} ></ToDoList>)
+                list.map(each => <ToDoList note={each}  ></ToDoList>)
             }
         </div>
     );
